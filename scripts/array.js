@@ -103,3 +103,31 @@ var splicedPart = arr8.splice(2,2);			// [7,9]
 var arr9 = [3,5,7,9,11,13];
 arr9.splice(2,2,'new','items');      		// [3,5,'new','items',11,13]
 
+
+
+
+// ----------------- MULTYDIMENSIONAL ARRAYS ---------------------
+
+// An array can contain arrays and objects inside it
+var arr10 = [
+	['Wake up', 8],
+	['Eat', 10],
+	['Work', 12],
+	['Lunch', 14],
+	['Sleep', 22]
+];
+
+// multydimensional arrays have the same array methods
+arr10.push(['Homework', 13]);
+arr10.pop();
+
+// let's add element in index 1
+arr10.splice(1,0,['Programming lesson', 19]);
+
+// We can access to all elements of a 2-dimensional array by using 2 loops
+for(var i = 0; i < arr10.length; i++) {
+	var innerArrayLength = arr10[i].length;
+	for (var j = 0; j < innerArrayLength; j++) {
+		console.log("[" + i + "," + j + "] = " + arr10[i][j]);
+	}
+};
