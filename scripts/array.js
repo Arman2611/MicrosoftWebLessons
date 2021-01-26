@@ -131,3 +131,47 @@ for(var i = 0; i < arr10.length; i++) {
 		console.log("[" + i + "," + j + "] = " + arr10[i][j]);
 	}
 };
+
+
+
+
+// ----------- FIND AND FINDINDEX METHODS -------------
+
+// find method returns first found element in the array,
+// which satisfies the condition given in callback function
+var arrObj = [
+	6,
+	45,
+	105,
+	{
+		name: {
+			firstName: 'Diego',
+			lastName: 'Forlan',
+		},
+		age: 41,
+		gender: 'male',
+		isWorking: true,
+		hobbies: ['football', 'boxing', 'driving'],
+	},
+];
+
+// a callback function that checks if gender is 'male'
+function checkGender(arrayItem) {
+	return arrayItem.gender === 'male';
+}
+// will return arrObj[2], coz it has gender property with 'male' value
+var foundEl = arrObj.find(checkGender);
+console.log(foundEl);						// arrObj[2]
+
+
+// findIndex method returns index of the first element in the array,
+// which satisfies the condition given in callback function
+
+// a callback function that checks if the value is more, than 30
+function checkNumber(arrayItem) {
+	return arrayItem > 30;
+};
+
+// will return 1, coz arrObj[1] > 30
+var foundIndex = arrObj.findIndex(checkNumber);
+console.log(foundIndex);	
