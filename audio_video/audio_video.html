@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio and Video tags</title>
+</head>
+<body>
+    <!-- Adding videos from Youtube -->
+    <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/wO02uW15_WU" 
+        frameborder="0" allow="accelerometer; autoplay; 
+        clipboard-write; encrypted-media; gyroscope; 
+        picture-in-picture" allowfullscreen>
+    </iframe>
+
+    <!-- Adding videos from local memory -->
+    <!-- "controls" attribute adds controls of the video player -->
+    <!-- <video src="videos/kong.mp4" width="560" height="315"
+        controls 
+        preload="auto" 
+        poster="img/video-poster.jpg"
+        loop
+        autoplay 
+        >            
+    </video> -->
+
+    <audio controls>
+        <source src="myAudio.mp3" type="audio/mpeg">
+        <source src="myAudio.ogg" type="audio/ogg">
+        <p>Your browser does not support html5 audio</p>
+    </audio>
+</body>
+</html>
