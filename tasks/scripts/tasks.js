@@ -99,5 +99,70 @@ function checkForAnagrams (str1, str2) {
 		};
 	}
 };
-
 console.log( checkForAnagrams('melon','lemon') );
+
+/*
+// another solution without nested loops
+function validAnagram(str1,str2) {
+	if(str1.length !== str2.length) {return false};
+	const lookup = {};
+	for(let i = 0; i < str1.length; i++) {
+		let letters = str1[i];
+		// if letter exists increment, else set to 1;
+		lookup[letters] ? lookup[letters] += 1 : lookup[letters] = 1;
+	};
+	for(let i = 0; i < str2.length; i++) {
+		let letters = str2[i];
+		if(!lookup[letters]) {
+			return false;
+		} else {
+			lookup[letters] -= 1;
+		}
+	};
+	return true;
+};
+
+console.log(validAnagram("abc", "abc"));
+console.log(validAnagram("", ""));
+console.log(validAnagram("abcd", "abc"));
+console.log(validAnagram("aac", "cca"));
+*/
+
+// Task 3: Create functions, that will convert temperature from Celcius to Farenheit and from Farenheit to Celcius
+
+function toFahrenheit(C) {
+	let F;
+	F = C * 1.8 + 32;
+	return F;
+};
+
+function toCelsius(F) {
+	let C;
+	C = (F - 32) / 1.8;
+	return C;
+};
+
+console.log(toFahrenheit(25));			// 77
+console.log(toCelsius(32));				// 0
+
+// Task 5: Create a function, that checks if the given string is palindrom or not
+
+function checkForPalindrom(str) {
+	// arguments should not be empty string
+	if (str === '') {
+		console.log("Don't use empty strings");
+		return;
+	};
+	str = str.toLowerCase();
+	console.log(str)
+	let isPalindrom = false;
+	for (let i = 0; i < (str.length/2 + 1); i++) {
+		if (str[i] === str[str.length-1-i]) {
+			continue;
+		} else {return isPalindrom};
+	};
+	isPalindrom = true;
+	return isPalindrom;
+};
+
+console.log(checkForPalindrom('Radar'))				// true
